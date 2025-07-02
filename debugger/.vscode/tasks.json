@@ -1,0 +1,21 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",  // The name of your task (you can reference this in `launch.json`)
+            "type": "shell",   // We're using a shell command to build the project
+            "command": "gcc",  // The command to run (you can use g++ for C++ code)
+            "args": [
+                "-g",            // Include debug symbols
+                "${workspaceFolder}/test.c",  // Your source file (change as needed)
+                "-o", "${workspaceFolder}/test.out"  // Output binary
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true  // Set this task as the default build task
+            },
+            "problemMatcher": ["$gcc"], // Use problem matcher for GCC errors
+            "detail": "Build the C program"
+        }
+    ]
+}
