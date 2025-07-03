@@ -1,17 +1,16 @@
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 
 int main() {
-    char* buffer = malloc(100);
-    int i;
+    char *buffer = malloc(10);
+    if (!buffer) return 1;
 
-    for(i = 0; i < 100; i++)
-    {
-        buffer[i] = i;
-    }
+    strcpy(buffer, "ABC");
+    strcpy(buffer, buffer + 1); 
 
-    memcpy(buffer + 10, buffer, 50); // src and dst overlap!
+    printf("%s\n", buffer);
+
     free(buffer);
     return 0;
 }
