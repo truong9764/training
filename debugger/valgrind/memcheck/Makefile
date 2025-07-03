@@ -1,9 +1,9 @@
 # Compiler and flags
 CC = gcc
-CFLAGS = -Wall -g
+CFLAGS = -Wall -g -O0
 
 # Source files
-SRC = $(wildcard test[1-8].c)
+SRC = $(wildcard test[1-9].c) test10.c
 
 # Executables (strip .c)
 EXE = $(SRC:.c=)
