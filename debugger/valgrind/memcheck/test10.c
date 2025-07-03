@@ -51,7 +51,7 @@ void case3() {
 }
 
 void case4() {
-    // Case 4: AAA --> BBB, but not referenced by RRR → AAA: DL, BBB: IL
+    // Case 4: AAA --> BBB, but not referenced by RRR → AAA
     int i;
     void *AAA = malloc(10 * sizeof(int));
     void *BBB = malloc(10 * sizeof(int));
@@ -70,7 +70,7 @@ void case4() {
 }
 
 void* case5() {
-    // Case 5: RRR holds interior pointer to BBB → (y)DR, (n)DL
+    // Case 5: RRR -?-> BBB 
     int i;
     void *BBB = malloc(10 * sizeof(int));
 
@@ -107,7 +107,7 @@ void* case6() {
 }
 
 void* case7() {
-    // Case 7: RRR -?-> AAA --> BBB → (y)DR/IR or (n)DL/IL
+    // Case 7: RRR -?-> AAA --> BBB 
     int i;
     void *AAA = malloc(10 * sizeof(int));
     void *BBB = malloc(10 * sizeof(int));
@@ -129,7 +129,7 @@ void* case7() {
 }
 
 void* case8() {
-    // Case 8: RRR -?-> AAA -?-> BBB → many combinations
+    // Case 8: RRR -?-> AAA -?-> BBB 
     int i;
     void *AAA = malloc(10 * sizeof(int));
     void *BBB = malloc(10 * sizeof(int));
@@ -153,7 +153,7 @@ void* case8() {
 }
 
 void* case9() {
-    // Case 9: AAA -?-> BBB, no root → AAA: DL, BBB: (y)IL, (n)DL
+    // Case 9: AAA -?-> BBB, but not referenced by RRR → AAA
     int i;
     void *AAA = malloc(10 * sizeof(int));
     void *BBB = malloc(10 * sizeof(int));
