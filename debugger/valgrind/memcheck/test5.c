@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+/*Overlapping source and destination blocks*/
 int main() {
     char *buffer = malloc(10);
     if (!buffer) return 1;

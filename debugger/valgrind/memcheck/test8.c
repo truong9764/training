@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h> 
-
+/*Alignment errors*/
 int main() {
     void *ptr_memalign = NULL;
     void *ptr_posix_memalign = NULL;

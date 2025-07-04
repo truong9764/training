@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 
-
-
+/*Memory leak detection*/
 void* case1() {
     // Case 1: RRR --> BBB 
     void *BBB = malloc(10 * sizeof(int));
